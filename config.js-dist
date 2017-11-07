@@ -1,0 +1,10 @@
+const fs = require('fs');
+
+module.exports = {
+    host: '',
+    username: '',
+    password: '',
+    privateKey: fs.readFileSync(''),
+    source: '',
+    destination: ''
+};
