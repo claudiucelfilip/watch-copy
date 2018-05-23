@@ -1,8 +1,12 @@
 const client = require('scp2');
 const watch = require('node-watch');
 const fs = require('fs');
+const path = require('path');
 
-const config = require('./config');
+let configPath = process.argv[2] || './config';
+const config = require(path.resolve(configPath));
+
+console.log(config);
 
 let disableDist = false;
 
@@ -22,8 +26,8 @@ watch(config.source, {
         isDist = true;
         disableDist = true;
 
-        from = config.source + '/dist';
-        to = config.destination + '/dist';
+        from = config.source + '/Websites/Website/dist';
+        to = config.destination + '\\Websites\\Website\\dist';
     }
 
     setTimeout(() => {
