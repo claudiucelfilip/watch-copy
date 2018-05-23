@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 let configPath = process.argv[2] || './config';
-const config = require(path.resolve(configPath));
+const config = require(path.resolve(__dirname, configPath));
 
 console.log(config);
 
